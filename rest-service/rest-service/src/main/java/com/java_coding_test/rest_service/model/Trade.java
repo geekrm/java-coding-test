@@ -8,6 +8,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeInfo.*;
+import com.java_coding_test.rest_service.validation.ValidationRules;
 
 @JsonTypeInfo(use = Id.NAME, include = As.PROPERTY, property = "type")
 @JsonSubTypes({
@@ -27,10 +28,11 @@ public abstract class Trade {
 	protected float rate;
 	protected String legalEntity;
 	protected String trader;
-	
+	protected Date valueDate;
+
 	private String validationStatus = "OK";
 	private List<String> validationMsgList = new ArrayList<String>();
-	
+
 	public String getCustomer() {
 		return customer;
 	}
@@ -118,6 +120,15 @@ public abstract class Trade {
 	public void setValidationMsgList(List<String> validationMsgList) {
 		this.validationMsgList = validationMsgList;
 	}
+	
+	public Date getValueDate() {
+		return valueDate;
+	}
+
+	public void setValueDate(Date valueDate) {
+		this.valueDate = valueDate;
+	}
+
 
 	@Override
 	public String toString() {

@@ -3,6 +3,8 @@ package com.java_coding_test.rest_service.model;
 import java.util.Currency;
 import java.util.Date;
 
+import com.java_coding_test.rest_service.validation.ValidationRules;
+
 public class Options extends Trade {
 
 	private String style;

@@ -3,6 +3,8 @@ package com.java_coding_test.rest_service.validation;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.util.StringUtils;
+
 import com.java_coding_test.rest_service.model.Trade;
 
 
@@ -39,7 +41,7 @@ public class ValidationRules {
 				isSuccess = result.isSuccess();
 			}
 			
-			if(result.getMessage() != null)
+			if(result.getMessage() != null && !StringUtils.isEmpty(result.getMessage()))
 				validationMsgList.add(result.getMessage());
 		}
 		

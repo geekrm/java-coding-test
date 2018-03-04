@@ -2,13 +2,11 @@ package com.java_coding_test.rest_service.model;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeInfo.*;
-import com.java_coding_test.rest_service.validation.ValidationRules;
 
 @JsonTypeInfo(use = Id.NAME, include = As.PROPERTY, property = "type")
 @JsonSubTypes({
@@ -23,12 +21,12 @@ public abstract class Trade {
 	protected String customer;
 	protected String ccyPair;
 	protected String direction;
-	protected Date tradeDate;
+	protected String tradeDate;
 	protected BigDecimal amount1, amount2;
 	protected float rate;
 	protected String legalEntity;
 	protected String trader;
-	protected Date valueDate;
+	protected String valueDate;
 
 	private String validationStatus = "OK";
 	private List<String> validationMsgList = new ArrayList<String>();
@@ -57,11 +55,11 @@ public abstract class Trade {
 		this.direction = direction;
 	}
 
-	public Date getTradeDate() {
+	public String getTradeDate() {
 		return tradeDate;
 	}
 
-	public void setTradeDate(Date tradeDate) {
+	public void setTradeDate(String tradeDate) {
 		this.tradeDate = tradeDate;
 	}
 
@@ -121,11 +119,11 @@ public abstract class Trade {
 		this.validationMsgList = validationMsgList;
 	}
 	
-	public Date getValueDate() {
+	public String getValueDate() {
 		return valueDate;
 	}
 
-	public void setValueDate(Date valueDate) {
+	public void setValueDate(String valueDate) {
 		this.valueDate = valueDate;
 	}
 
@@ -133,7 +131,7 @@ public abstract class Trade {
 	@Override
 	public String toString() {
 		return String.format(
-				"customer: %s, tradeDate: %s, amount1: %s", customer, tradeDate, amount1);
+				"customer: %s, tradeDate: %s", customer, tradeDate);
 	}
 	
 }

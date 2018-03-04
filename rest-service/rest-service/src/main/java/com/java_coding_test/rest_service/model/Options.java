@@ -1,18 +1,13 @@
 package com.java_coding_test.rest_service.model;
 
-import java.util.Currency;
-import java.util.Date;
-
-import com.java_coding_test.rest_service.validation.ValidationRules;
-
 public class Options extends Trade {
 
 	private String style;
 	private String strategy;
-	private Date deliveryDate, expiryDate, premiumDate;
-	private Currency payCcy;
+	private String deliveryDate, expiryDate, premiumDate;
+	private String payCcy;
 	private float premium;
-	private Currency premiumCcy;
+	private String premiumCcy;
 	private String premiumType;
 	
 	public String getStyle() {
@@ -31,35 +26,35 @@ public class Options extends Trade {
 		this.strategy = strategy;
 	}
 
-	public Date getDeliveryDate() {
+	public String getDeliveryDate() {
 		return deliveryDate;
 	}
 
-	public void setDeliveryDate(Date deliveryDate) {
+	public void setDeliveryDate(String deliveryDate) {
 		this.deliveryDate = deliveryDate;
 	}
 
-	public Date getExpiryDate() {
+	public String getExpiryDate() {
 		return expiryDate;
 	}
 
-	public void setExpiryDate(Date expiryDate) {
+	public void setExpiryDate(String expiryDate) {
 		this.expiryDate = expiryDate;
 	}
 
-	public Date getPremiumDate() {
+	public String getPremiumDate() {
 		return premiumDate;
 	}
 
-	public void setPremiumDate(Date premiumDate) {
+	public void setPremiumDate(String premiumDate) {
 		this.premiumDate = premiumDate;
 	}
 
-	public Currency getPayCcy() {
+	public String getPayCcy() {
 		return payCcy;
 	}
 
-	public void setPayCcy(Currency payCcy) {
+	public void setPayCcy(String payCcy) {
 		this.payCcy = payCcy;
 	}
 
@@ -71,11 +66,11 @@ public class Options extends Trade {
 		this.premium = premium;
 	}
 
-	public Currency getPremiumCcy() {
+	public String getPremiumCcy() {
 		return premiumCcy;
 	}
 
-	public void setPremiumCcy(Currency premiumCcy) {
+	public void setPremiumCcy(String premiumCcy) {
 		this.premiumCcy = premiumCcy;
 	}
 
@@ -89,7 +84,7 @@ public class Options extends Trade {
 
 	@Override
 	public String toString() {
-		return "OPTIONS: "+String.format("premiumCcy: %s, ", premiumCcy)+super.toString();
+		return "OPTIONS: "+super.toString();
 	}
 	
 }
